@@ -1,0 +1,16 @@
+to Angle :num :length
+	REPEAT :num [FD :length RT 360/:num]
+end
+
+to Angle2 :num :length
+	REPEAT :num [FD :length RT 720/:num]
+end
+
+to RepAngle :count :style :num :length
+	REPEAT :count [REPEAT :num [FD :length RT 360*:style/:num] RT 5 Wait 5]
+end
+
+Print [Program will start in 1 second...]
+wait 60
+RepAngle 72 2 5 120
+Print [Enter "Bye" to exit]
